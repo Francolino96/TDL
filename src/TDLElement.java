@@ -3,12 +3,12 @@ import java.util.Date;
 
 public class TDLElement {
 
-    String name;
-    public void setName(String newName){
-        name=newName;
+    String title;
+    public void setTitle(String newTitle){
+        title=newTitle;
     }
-    public String getName(){
-        return name;
+    public String getTitle(){
+        return title;
     }
 
     String text;
