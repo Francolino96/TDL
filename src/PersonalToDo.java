@@ -1,8 +1,8 @@
 public class PersonalToDo extends ToDo{
 
-    boolean atHome;
-    public void setAtHome(boolean atHomeChoice){
-        atHome = atHomeChoice;
+    private boolean atHome;
+    public void setAtHome(boolean atHome){
+        this.atHome = atHome;
     }
     public boolean getAtHome(){
         return atHome;

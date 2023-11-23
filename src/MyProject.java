@@ -109,7 +109,9 @@ public class MyProject {
         // creates a new commitment
         
         System.out.println("\n\nCREATE A NEW COMMITMENT");
-        String userInput, choice, category;
+        String userInput, choice;
+        enum Category {University, Work, Personal, Default}
+        Category myCategory;
         do {
             do {
                 System.out.println("\nChoose between the following categories:");
@@ -120,11 +122,11 @@ public class MyProject {
                         """);
                 userInput = scanner.nextLine();
                 switch (userInput) {
-                    case "u" -> category = "University";
-                    case "w" -> category = "Work";
-                    case "p" -> category = "Personal";
+                    case "u" -> myCategory = Category.University;
+                    case "w" -> myCategory = Category.Work;
+                    case "p" -> myCategory = Category.Personal;
                     default -> {
-                        category = "Error";
+                        myCategory = Category.Default;
                         System.out.println("Error. Something went wrong in the switch statement.");
                     }
                 }
@@ -133,18 +135,18 @@ public class MyProject {
                     System.out.println("Enter a new command.\n");
                 }
             } while (!(userInput.equals("u") || userInput.equals("w") || userInput.equals("p")));
-            choice = makeAChoice("The category you chose is: " + category + "\nIs it correct?");
+            choice = makeAChoice("The category you chose is: " + myCategory + "\nIs it correct?");
         } while (choice.equals("n"));
-        switch (category) {
-            case "University" -> {
+        switch (myCategory) {
+            case University -> {
                 UniversityToDo newUTD = new UniversityToDo();
                 newIO.insertTheFields(newUTD, myTDL);
             }
-            case "Work" -> {
+            case Work -> {
                 WorkToDo newWTD = new WorkToDo();
                 newIO.insertTheFields(newWTD, myTDL);
             }
-            case "Personal" -> {
+            case Personal -> {
                 PersonalToDo newPTD = new PersonalToDo();
                 newIO.insertTheFields(newPTD, myTDL);
             }

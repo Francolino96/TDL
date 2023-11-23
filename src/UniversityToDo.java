@@ -1,5 +1,5 @@
 public class UniversityToDo extends ToDo {
-    String course;
+    private String course;
     public void setCourse(String newCourse){
         course = newCourse;
     }

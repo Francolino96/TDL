@@ -1,6 +1,6 @@
 public class WorkToDo extends ToDo {
 
-    int hours;
+    private int hours;
     public void setHours(int hours) {
         this.hours = hours;
     }
