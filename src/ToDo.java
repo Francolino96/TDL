@@ -1,11 +1,15 @@
-import java.util.Calendar;
-import java.util.Date;
+/*
+interface generalMethods{
+    void insertTitleCourseHoursAtHomeOrText(String element);
+    void insertPriority();
+    void printCommitment();
+}*/
 
-public class TDLElement {
+abstract public class ToDo /*implements generalMethods*/ {
 
     String title;
     public void setTitle(String newTitle){
-        title=newTitle;
+        title = newTitle;
     }
     public String getTitle(){
         return title;
@@ -13,7 +17,7 @@ public class TDLElement {
 
     String text;
     public void setText(String newText){
-        text=newText;
+        text = newText;
     }
     public String getText(){
         return text;
@@ -21,20 +25,25 @@ public class TDLElement {
 
     String priority;
     public void setPriority(String newPriority){
-        priority=newPriority;
+        priority = newPriority;
     }
     public String getPriority(){
         return priority;
     }
 
-    String category;
-    public void setCategory(String newCategory){
-        category=newCategory;
-    }
-    public String getCategory(){
-        return category;
+    //public abstract void Metodo ();
+
+    ToDo(){
+        title = "-";
+        text = "-";
+        priority = "3";
     }
 
+    ToDo(String title, String text, String priority){
+        this.title = title;
+        this.text = text;
+        this.priority = priority;
+    }
 
     /*
     Calendar date;

@@ -6,50 +6,31 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         MyProject project = new MyProject(scanner);
 
-        ArrayList<TDLElement> myTDL = new ArrayList<>();
+        ArrayList<ToDo> myTDL = new ArrayList<>();
 
-        TDLElement myElement = new TDLElement();
-        myElement.setTitle("Palestra");
-        myElement.setText("Domani gambe, plank e stacco rumeno");
-        myElement.setPriority("3");
-        myElement.setCategory("Sport");
+        ToDo myElement = new PersonalToDo("Palestra",
+                "Domani gambe, plank e stacco rumeno", "3", false);
         myTDL.add(myElement);
 
-        TDLElement myElement2 = new TDLElement();
-        myElement2.setTitle("Paraurti");
-        myElement2.setText("Martedì devo andare dal carrozziere a sistemare il paraurti");
-        myElement2.setPriority("1");
-        myElement2.setCategory("Faccende domestiche");
+        ToDo myElement2 = new WorkToDo("Paraurti",
+                "Martedì devo andare dal carrozziere a sistemare il paraurti", "1", 3);
         myTDL.add(myElement2);
 
-        TDLElement myElement3 = new TDLElement();
-        myElement3.setTitle("Studiare DWM");
-        myElement3.setText("Devo mettermi al passo con DWM");
-        myElement3.setPriority("2");
-        myElement3.setCategory("Univeristà");
+        ToDo myElement3 = new UniversityToDo("Studiare DWM",
+                "Devo mettermi al passo con DWM", "2", "DWM");
         myTDL.add(myElement3);
 
-        TDLElement myElement4 = new TDLElement();
-        myElement4.setTitle("Controllare infiltrazioni");
-        myElement4.setText("Controllare infiltrazioni tetto lato camino");
-        myElement4.setPriority("1");
-        myElement4.setCategory("Faccende domestiche");
+        ToDo myElement4 = new PersonalToDo("Controllare infiltrazioni",
+                "Controllare infiltrazioni tetto lato camino", "1", true);
         myTDL.add(myElement4);
 
         while (true) {
             String userInput = project.homePage(myTDL);
             switch (userInput) {
-                case "m":
-                    project.modifyCommitment(myTDL);
-                    break;
-                case "a":
-                    project.createNewCommitment(myTDL);
-                    break;
-                case "d":
-                    project.deleteCommitment(myTDL);
-                    break;
-                default:
-                    System.out.println("Error. Something went wrong in the switch statement.");
+                case "m" -> project.modifyCommitment(myTDL);
+                case "a" -> project.createNewCommitment(myTDL);
+                case "d" -> project.deleteCommitment(myTDL);
+                default -> System.out.println("Error. Something went wrong in the switch statement.");
             }
         }
     }
