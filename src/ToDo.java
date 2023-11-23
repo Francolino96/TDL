@@ -1,4 +1,11 @@
-abstract public class ToDo {
+/*
+interface generalMethods{
+    void insertTitleCourseHoursAtHomeOrText(String element);
+    void insertPriority();
+    void printCommitment();
+}*/
+
+abstract public class ToDo /*implements generalMethods*/ {
 
     String title;
     public void setTitle(String newTitle){

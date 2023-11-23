@@ -27,17 +27,10 @@ public class Main {
         while (true) {
             String userInput = project.homePage(myTDL);
             switch (userInput) {
-                case "m":
-                    project.modifyCommitment(myTDL);
-                    break;
-                case "a":
-                    project.createNewCommitment(myTDL);
-                    break;
-                case "d":
-                    project.deleteCommitment(myTDL);
-                    break;
-                default:
-                    System.out.println("Error. Something went wrong in the switch statement.");
+                case "m" -> project.modifyCommitment(myTDL);
+                case "a" -> project.createNewCommitment(myTDL);
+                case "d" -> project.deleteCommitment(myTDL);
+                default -> System.out.println("Error. Something went wrong in the switch statement.");
             }
         }
     }

@@ -1,10 +1,10 @@
 public class PersonalToDo extends ToDo{
 
     boolean atHome;
-    public void atHome(boolean atHomeChoice){
+    public void setAtHome(boolean atHomeChoice){
         atHome = atHomeChoice;
     }
-    public boolean atHome(){
+    public boolean getAtHome(){
         return atHome;
     }
 
